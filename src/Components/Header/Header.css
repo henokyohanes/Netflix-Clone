@@ -1,0 +1,103 @@
+.logo {
+  width: 120px;
+}
+
+.avatar {
+  width: 35px;
+  border-radius: 4px;
+}
+
+#nav-dropdown {
+  color: white;
+  font-size: large;
+}
+
+.custom-toggle {
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  left: 11em;
+  top: 2em;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.navbar .nav-link {
+  color: white;
+  font-size: .8em;
+}
+
+.navbar {
+  padding: 0 2.5em;
+}
+
+.right-navbar {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: .4em;
+  flex-shrink: 0 !important;
+}
+
+.netflix-navbar {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.right-navbar {
+  position: absolute;
+  right: 3em;
+  top: 2em;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.left-dropdown {
+  margin-right: 1em;
+}
+
+.sign-out {
+  text-align: center;
+}
+
+.navbar-nav .dropdown-menu {
+  width: 220px;
+  background-color: #141414 !important;
+  position: absolute;
+  right: 0;
+  top: 11em;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.dropdown-item {
+  font-size: .8em;
+  color: white !important;
+}
+
+.dropdown-divider {
+  border-top: 1px solid white !important;
+}
+.dropdown-item:hover {
+  background-color: #141414 !important;
+  text-decoration: underline;
+}
+
+.left-navbar .nav-link{
+  opacity: 1;
+}
+
+.left-navbar .nav-link:hover {
+  opacity: .8;
+}
+
+@media screen and (max-width: 991px) {
+
+  .left-navbar {
+  text-align: center;
+  width: 200px;
+}
+
+}
