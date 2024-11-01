@@ -1,5 +1,19 @@
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
 .logo {
   width: 120px;
+}
+
+.navbar-brand {
+  z-index: 1000;
+}
+
+.bg-black {
+  background-color: #141414;
 }
 
 .avatar {
@@ -13,9 +27,6 @@
 }
 
 .custom-toggle {
-  color: white;
-  background: none;
-  border: none;
   cursor: pointer;
   position: absolute;
   left: 11em;
@@ -30,7 +41,7 @@
 }
 
 .navbar {
-  padding: 0 2.5em;
+  padding: 0 2.5vw;
 }
 
 .right-navbar {
@@ -44,6 +55,17 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+  z-index: 1000;
+  transition: all 0.3s;
+  transition-timing-function: ease-in;
+}
+
+.left-navbar {
+  position: absolute;
+  left: 11em;
+  top: 2em;
+  transform: translateY(-50%);
+  z-index: 1000;
 }
 
 .right-navbar {
@@ -70,6 +92,19 @@
   top: 11em;
   transform: translateY(-50%);
   z-index: 1000;
+  opacity: .8;
+}
+
+.custom-toggle .dropdown-menu {
+  width: 220px;
+  text-align: center;
+  background-color: #141414 !important;
+  position: absolute;
+  left: -5em;
+  top: 9em;
+  transform: translateY(-50%);
+  z-index: 1000;
+  opacity: .8;
 }
 
 .dropdown-item {
@@ -91,13 +126,4 @@
 
 .left-navbar .nav-link:hover {
   opacity: .8;
-}
-
-@media screen and (max-width: 991px) {
-
-  .left-navbar {
-  text-align: center;
-  width: 200px;
-}
-
 }

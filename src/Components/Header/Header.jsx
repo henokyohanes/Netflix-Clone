@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import logo from "../../assets/Images/logo.png";
 import avatar from "../../assets/Images/avatar.png";
 import kids from "../../assets/Images/kids.png";
@@ -14,25 +13,33 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Header.css";
 
 const Header = () => {
-  const [expanded, setExpanded] = useState(false);
+
+  const [show, setshow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setshow(true);
+      } else {
+        setshow(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <Navbar expand="lg" expanded={expanded} className="netflix-navbar">
+    <div className="header">
+    <Navbar className={`netflix-navbar ${show ? "bg-black" : ""}`}>
       <Navbar.Brand href="#">
         <img src={logo} alt="Netflix logo" className="logo" />
       </Navbar.Brand>
-      <button
-        className="custom-toggle d-lg-none"
-        onClick={() => setExpanded(expanded ? false : "expanded")}
-        aria-controls="basic-navbar-nav"
-        aria-expanded={expanded}
-      >
-        Browse
-        <ArrowDropDownIcon fontSize="large" />
-      </button>
 
-      <Navbar.Collapse id="basic-navbar-nav me-auto">
-        <Nav className="left-navbar">
+        <Nav className="left-navbar d-none d-lg-flex">
           <Nav.Link>Home</Nav.Link>
           <Nav.Link>TV Shows</Nav.Link>
           <Nav.Link>Movies</Nav.Link>
@@ -40,7 +47,20 @@ const Header = () => {
           <Nav.Link>My List</Nav.Link>
           <Nav.Link>Browse by Languages</Nav.Link>
         </Nav>
-      </Navbar.Collapse>
+
+      <NavDropdown
+        title="Browse"
+        id="navbar-dropdown"
+        className="custom-toggle d-lg-none"
+      >
+        <NavDropdown.Item>Home</NavDropdown.Item>
+        <NavDropdown.Item>TV Shows</NavDropdown.Item>
+        <NavDropdown.Item>Movies</NavDropdown.Item>
+        <NavDropdown.Item>New & Popular</NavDropdown.Item>
+        <NavDropdown.Item>My List</NavDropdown.Item>
+        <NavDropdown.Item>Browse by Languages</NavDropdown.Item>
+      </NavDropdown>
+
       <Nav className="right-navbar ms-auto d-flex align-items-center ">
         <Nav.Link>
           <SearchRoundedIcon fontSize="large" className="d-none d-md-block" />
@@ -52,8 +72,12 @@ const Header = () => {
         <Nav.Link>
           <img src={avatar} alt="Avatar" className="avatar" />
         </Nav.Link>
-        <NavDropdown id="nav-dropdown" align="end" className="d-none d-md-block">
-          <nav className="background">
+        <NavDropdown
+          id="nav-dropdown"
+          align="end"
+          className="d-none d-md-block"
+        >
+          <div className="background">
             <NavDropdown.Item className="right-dropdown">
               <img src={kids} alt="kids png" className="left-dropdown" />
               kids
@@ -72,11 +96,14 @@ const Header = () => {
               <HelpOutlineIcon className="left-dropdown" /> help center
             </NavDropdown.Item>
             <NavDropdown.Divider className="right-dropdown" />
-            <NavDropdown.Item className="sign-out">Sign Out of Netflix</NavDropdown.Item>
-          </nav>
+            <NavDropdown.Item className="sign-out">
+              Sign Out of Netflix
+            </NavDropdown.Item>
+          </div>
         </NavDropdown>
       </Nav>
     </Navbar>
+    </div>
   );
 }
 

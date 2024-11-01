@@ -5,7 +5,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import "./Footer.css"
 
-export default function Footer() {
+const Footer = () => {
   return (
     <div className="footer_container">
       <div className="footer">
@@ -51,3 +51,5 @@ export default function Footer() {
     </div>
   );
 }
+
+export default Footer
