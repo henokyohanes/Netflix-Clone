@@ -43,6 +43,7 @@
 .banner-button {
     cursor: pointer;
     display: flex;
+    gap: .5vw;
     align-items: center;
     color: white;
     outline: none;

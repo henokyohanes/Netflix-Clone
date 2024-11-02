@@ -32,7 +32,7 @@ export default function Row({ title, fetchUrl, isLargeRow }) {
     const posterPosition = e.target.getBoundingClientRect(); // Get the position and size of the clicked poster
     const containerPosition = rowContainerRef.current.getBoundingClientRect(); // Get the container's position
 
-    const scaleFactor = isLargeRow ? 1.8 : 2.7;
+    const scaleFactor = isLargeRow ? 2 : 3.2;
 
     // Calculate scaled dimensions
     const scaledWidth = posterPosition.width * scaleFactor;
@@ -79,7 +79,7 @@ export default function Row({ title, fetchUrl, isLargeRow }) {
       <h2 className="row_title">{title}</h2>
       <div className="row_container_wrapper">
         <button className="arrow arrow-left" onClick={scrollLeft}>
-          <ArrowBack fontSize="large" />
+          <ArrowBack sx={{ fontSize: "2vw" }} />
         </button>
         <div className="row_container" ref={rowContainerRef}>
           {/* Loop through the movies and display each poster in the row */}
@@ -90,7 +90,9 @@ export default function Row({ title, fetchUrl, isLargeRow }) {
               className={`${isLargeRow ? "row_posterLarge" : "row_poster"}`}
               src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} // Image source based on row type
               alt={movie.name}
-              onError={(e) => {e.target.src = image;}} // Fallback image in case of an error
+              onError={(e) => {
+                e.target.src = image;
+              }} // Fallback image in case of an error
             />
           ))}
         </div>
@@ -111,7 +113,7 @@ export default function Row({ title, fetchUrl, isLargeRow }) {
           }}
         >
           <button className="close_button" onClick={() => setTrailerUrl("")}>
-            <CloseIcon fontSize="large" /> Close
+            <CloseIcon sx={{ fontSize: "3vw" }} /> Close
           </button>
           <YouTube videoId={trailerUrl} opts={opts} />
         </div>

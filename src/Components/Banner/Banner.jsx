@@ -4,6 +4,7 @@ import requests from "../../utils/requests"; // API requests configuration
 import movieTrailer from "movie-trailer";
 import YouTube from "react-youtube";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import InfoIcon from "@mui/icons-material/Info";
 import CloseIcon from "@mui/icons-material/Close";
 import "./Banner.css";
 
@@ -65,9 +66,10 @@ const Banner = () => {
                 className="banner-button"
                 onClick={() => handleclick(movie)}
               >
-                <PlayArrowIcon fontSize="large" /> Play
+                <PlayArrowIcon sx={{ fontSize: "3vw" } } /> Play
               </button>
-              <button className="banner-button"> More Info </button>
+              <button className="banner-button">
+                <InfoIcon sx={{ fontSize: "3vw" } } /> More Info </button>
             </div>
           </div>
         )}
@@ -77,7 +79,7 @@ const Banner = () => {
       {trailerUrl && (
         <div className="banner-trailer-container">
           <div className="close-button" onClick={() => settrailerUrl("")}>
-            <CloseIcon fontSize="large" />
+            <CloseIcon sx={{ fontSize: "3vw" } } />
             Close
           </div>
           <div className="banner-trailer">
