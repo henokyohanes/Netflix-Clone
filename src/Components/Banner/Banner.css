@@ -3,6 +3,11 @@
     object-fit: contain;
     position: relative;
     z-index: 1;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 48vw;
+    margin-bottom: -7vw;
 }
 
 .banner-contents {

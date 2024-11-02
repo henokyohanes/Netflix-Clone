@@ -29,7 +29,7 @@
 .custom-toggle {
   cursor: pointer;
   position: absolute;
-  left: 11em;
+  left: 10em;
   top: 2em;
   transform: translateY(-50%);
   z-index: 1000;

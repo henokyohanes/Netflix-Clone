@@ -47,11 +47,7 @@ const Banner = () => {
       <div
         className="banner"
         style={{
-          backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          height: "48vw",
+          backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`
         }}
       >
         <div className="banner-fadeTop"></div>
