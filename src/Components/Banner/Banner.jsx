@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "../../utils/axios"; // Axios instance for making API requests
 import requests from "../../utils/requests"; // API requests configuration
+import fallbackImage from "../../assets/Images/banner.jpg";
 import movieTrailer from "movie-trailer";
 import YouTube from "react-youtube";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
@@ -48,7 +49,7 @@ const Banner = () => {
       <div
         className="banner"
         style={{
-          backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`
+          backgroundImage: `url(${movie?.backdrop_path ? `https://image.tmdb.org/t/p/original/${movie.backdrop_path}` : fallbackImage})`,
         }}
       >
         <div className="banner-fadeTop"></div>
@@ -66,10 +67,11 @@ const Banner = () => {
                 className="banner-button"
                 onClick={() => handleclick(movie)}
               >
-                <PlayArrowIcon sx={{ fontSize: "3vw" } } /> Play
+                <PlayArrowIcon sx={{ fontSize: "3vw" }} /> Play
               </button>
               <button className="banner-button">
-                <InfoIcon sx={{ fontSize: "3vw" } } /> More Info </button>
+                <InfoIcon sx={{ fontSize: "3vw" }} /> More Info{" "}
+              </button>
             </div>
           </div>
         )}
@@ -79,7 +81,7 @@ const Banner = () => {
       {trailerUrl && (
         <div className="banner-trailer-container">
           <div className="close-button" onClick={() => settrailerUrl("")}>
-            <CloseIcon sx={{ fontSize: "3vw" } } />
+            <CloseIcon sx={{ fontSize: "3vw" }} />
             Close
           </div>
           <div className="banner-trailer">

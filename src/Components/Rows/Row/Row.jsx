@@ -75,7 +75,7 @@ export default function Row({ title, fetchUrl, isLargeRow }) {
   };
 
   return (
-    <div className="row">
+    <div className={`row ${trailerUrl ? "row_video" : ""}`}>
       <h2 className="row_title">{title}</h2>
       <div className="row_container_wrapper">
         <button className="arrow arrow-left" onClick={scrollLeft}>
@@ -97,7 +97,7 @@ export default function Row({ title, fetchUrl, isLargeRow }) {
           ))}
         </div>
         <button className="arrow arrow-right" onClick={scrollRight}>
-          <ArrowForward fontSize="large" />
+          <ArrowForward sx={{ fontSize: "2vw" }} />
         </button>
       </div>
       {/* Trailer popup if trailerUrl is set */}
@@ -109,7 +109,7 @@ export default function Row({ title, fetchUrl, isLargeRow }) {
             left: `${hoveredPoster.left}px`,
             width: `${hoveredPoster.width}px`,
             height: `${hoveredPoster.height}px`,
-            transform: `scale(${1 / hoveredPoster.scaleFactor})`,
+            transform: `scale(${1 / hoveredPoster.scaleFactor}) translate(-${scrollPosition}px, 0)`,
           }}
         >
           <button className="close_button" onClick={() => setTrailerUrl("")}>
