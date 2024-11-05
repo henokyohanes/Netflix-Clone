@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 
 import {VisibilityContext } from "react-horizontal-scrolling-menu";
@@ -12,11 +12,11 @@ const Arrow = ({ direction, onClick }) => {
 };
 
 export const LeftArrow = () => {
-  const { scrollPrev } = React.useContext(VisibilityContext);
+  const { scrollPrev } = useContext(VisibilityContext);
   return <Arrow direction="left" onClick={() => scrollPrev()} />;
 };
 
 export const RightArrow = () => {
-  const { scrollNext } = React.useContext(VisibilityContext);
+  const { scrollNext } = useContext(VisibilityContext);
   return <Arrow direction="right" onClick={() => scrollNext()} />;
 };
