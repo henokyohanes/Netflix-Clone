@@ -10,6 +10,7 @@ import CloseIcon from "@mui/icons-material/Close";
 const base_url = "https://image.tmdb.org/t/p/original/";
 
 const Row =({ title, fetchUrl, isLargeRow }) => {
+
   const [movies, setMovies] = useState([]); // State to store movies data fetched from API
   const [trailerUrl, setTrailerUrl] = useState(""); // State to store the YouTube trailer URL
   const [hoveredPoster, setHoveredPoster] = useState({}); // State to track the hovered poster's dimensions and position
@@ -32,7 +33,7 @@ const Row =({ title, fetchUrl, isLargeRow }) => {
     const posterPosition = e.target.getBoundingClientRect(); // Get the position and size of the clicked poster
     const containerPosition = rowContainerRef.current.getBoundingClientRect(); // Get the container's position
 
-    const scaleFactor = isLargeRow ? 2.3 : 3.6;
+    const scaleFactor = isLargeRow ? 2.1 : 3.1;
 
     // Calculate scaled dimensions
     const scaledWidth = posterPosition.width * scaleFactor;
@@ -82,6 +83,7 @@ const Row =({ title, fetchUrl, isLargeRow }) => {
           <ArrowBack sx={{ fontSize: "2vw" }} />
         </button>
         <div className="row_container" ref={rowContainerRef}>
+
           {/* Loop through the movies and display each poster in the row */}
           {movies?.map((movie) => (
             <img
@@ -100,6 +102,7 @@ const Row =({ title, fetchUrl, isLargeRow }) => {
           <ArrowForward sx={{ fontSize: "2vw" }} />
         </button>
       </div>
+      
       {/* Trailer popup if trailerUrl is set */}
       {trailerUrl && (
         <div

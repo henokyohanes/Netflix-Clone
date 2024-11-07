@@ -33,7 +33,7 @@
 
 .row_poster {
   object-fit: contain;
-  height: 7em;
+  height: 4em;
   margin: 2vw .5vw 2vw 0;
   transition: transform 0.3s ease-in-out;
   position: relative;
@@ -54,7 +54,7 @@
 
 .row_posterLarge {
   object-fit: contain;
-  height: 14em;
+  height: 10em;
   margin: 2vw .5vw 2vw 0;
   transition: transform 0.3s ease-in-out;
   position: relative;
@@ -124,4 +124,14 @@
   color: black;
   background-color: white;
   transition: all 0.2s;
+}
+
+@media screen and (min-width: 768px) {
+  .row_poster {
+    height: 9em;
+  }
+
+  .row_posterLarge {
+    height: 17em;
+  }
 }

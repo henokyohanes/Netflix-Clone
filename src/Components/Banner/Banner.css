@@ -6,8 +6,8 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 48vw;
-    margin-bottom: -7vw;
+    height: 50vw;
+    margin-bottom: -9vw;
 }
 
 .banner-contents {
@@ -86,7 +86,7 @@
 }
 
 .banner-fadeBottom {
-    height: 44vw;
+    height: 46vw;
     background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.61), #111);
 }
 

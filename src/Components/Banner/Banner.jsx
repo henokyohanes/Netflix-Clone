@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "../../utils/axios"; // Axios instance for making API requests
+import axios from "../../utils/axios";
 import requests from "../../utils/requests"; // API requests configuration
 import fallbackImage from "../../assets/Images/banner.jpg";
 import movieTrailer from "movie-trailer";
@@ -53,6 +53,7 @@ const Banner = () => {
         }}
       >
         <div className="banner-fadeTop"></div>
+
         {/* If no trailer is playing, show movie info and buttons */}
         {!trailerUrl && (
           <div className="banner-contents">
@@ -77,6 +78,7 @@ const Banner = () => {
         )}
         <div className="banner-fadeBottom"></div>
       </div>
+      
       {/* Display YouTube trailer if trailerUrl is set */}
       {trailerUrl && (
         <div className="banner-trailer-container">

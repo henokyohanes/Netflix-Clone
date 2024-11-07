@@ -3,9 +3,10 @@ import Row from './Row/Row'
 import requests from '../../utils/requests'
 import './Rows.css'
 
-export default function Rows() {
+const Rows = () => {
   return (
     <>
+      {/* Render the rows */}
       <Row title="Netflix Originals" fetchUrl={requests.fetchNetflixOriginals} isLargeRow />
       <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
       <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
@@ -21,3 +22,5 @@ export default function Rows() {
     </>
   )
 }
+
+export default Rows

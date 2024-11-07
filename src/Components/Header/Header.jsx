@@ -14,10 +14,10 @@ import "./Header.css";
 
 const Header = () => {
 
-  const [show, setshow] = useState(false);
+  const [show, setshow] = useState(false); // state to control when the background changes on scroll
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = () => { // function to handle scroll event
       if (window.scrollY > 50) {
         setshow(true);
       } else {
@@ -35,10 +35,13 @@ const Header = () => {
   return (
     <div className="header">
     <Navbar className={`netflix-navbar ${show ? "bg-black" : ""}`}>
+
+      {/* logo section */}
       <Navbar.Brand href="#">
         <img src={logo} alt="Netflix logo" className="logo" />
       </Navbar.Brand>
 
+      {/* left navbar section */}
         <Nav className="left-navbar d-none d-lg-flex">
           <Nav.Link>Home</Nav.Link>
           <Nav.Link>TV Shows</Nav.Link>
@@ -48,6 +51,7 @@ const Header = () => {
           <Nav.Link>Browse by Languages</Nav.Link>
         </Nav>
 
+      {/* left dropdown section */}
       <NavDropdown
         title="Browse"
         id="navbar-dropdown"
@@ -61,6 +65,7 @@ const Header = () => {
         <NavDropdown.Item>Browse by Languages</NavDropdown.Item>
       </NavDropdown>
 
+      {/* right navbar section */}
       <Nav className="right-navbar ms-auto d-flex align-items-center ">
         <Nav.Link>
           <SearchRoundedIcon fontSize="large" className="d-none d-md-block" />
@@ -72,6 +77,8 @@ const Header = () => {
         <Nav.Link>
           <img src={avatar} alt="Avatar" className="avatar" />
         </Nav.Link>
+
+        {/* right dropdown section */}
         <NavDropdown
           id="nav-dropdown"
           align="end"
