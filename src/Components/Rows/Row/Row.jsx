@@ -92,6 +92,7 @@ const Row =({ title, fetchUrl, isLargeRow }) => {
               className={`${isLargeRow ? "row_posterLarge" : "row_poster"}`}
               src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} // Image source based on row type
               alt={movie.name}
+              loading="lazy"
               onError={(e) => {
                 e.target.src = image;
               }} // Fallback image in case of an error

@@ -38,7 +38,7 @@ const Header = () => {
 
       {/* logo section */}
       <Navbar.Brand href="#">
-        <img src={logo} alt="Netflix logo" className="logo" />
+        <img src={logo} alt="Netflix logo" className="logo" loading="lazy"/>
       </Navbar.Brand>
 
       {/* left navbar section */}
@@ -75,7 +75,7 @@ const Header = () => {
           <NotificationsNoneIcon fontSize="medium" />
         </Nav.Link>
         <Nav.Link>
-          <img src={avatar} alt="Avatar" className="avatar" />
+          <img src={avatar} alt="Avatar" className="avatar" loading="lazy"/>
         </Nav.Link>
 
         {/* right dropdown section */}
@@ -86,7 +86,7 @@ const Header = () => {
         >
           <div className="background">
             <NavDropdown.Item className="right-dropdown">
-              <img src={kids} alt="kids png" className="left-dropdown" />
+              <img src={kids} alt="kids png" className="left-dropdown" loading="lazy"/>
               kids
             </NavDropdown.Item>
             <NavDropdown.Item className="right-dropdown">
