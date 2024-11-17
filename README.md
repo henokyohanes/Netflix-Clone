@@ -32,6 +32,8 @@ This project fetches movie data dynamically from TMDb (The Movie Database) API a
 
 ```
 Netflix-Clone
+├── public/                              # public code for the app
+│   ├── robots.txt                       # Disallows search engines from indexing
 ├── src/                                 # Source code for the app
 │   ├── Components/                      # Reusable components
 │   │   ├── Banner                       # Banner component for displaying random movies
@@ -51,8 +53,8 @@ Netflix-Clone
 │   │   │   ├── Rows.jsx                 # Rows component
 │   ├── assets/Images                    # Images
 │   ├── utils/                           # Helper functions
-│   │   ├──axios.jsx                     # Axios instance for API calls
-│   │   ├──requests.jsx                  # API requests configuration
+│   │   ├──axios.js                      # Axios instance for API calls
+│   │   ├──requests.js                   # API requests configuration
 │   ├── App.css                          # Global styles
 │   ├── App.jsx                          # React DOM rendering entry point
 │   └── main.jsx                         # Main entry point for the React app
@@ -63,14 +65,13 @@ Netflix-Clone
 ├── package-lock.json                    # Auto-generated lock file for npm dependencies
 ├── package.json                         # Project metadata and dependencies
 ├── vite.config.js                       # Vite configuration file
-README.md                                # Project README file
 ```
 
 ## Installation
 
 ```
 1. Clone the repository:  
-   `git clone https://github.com/yourusername/Netflix-Clone.git`
+   `git clone https://github.com/henokyohanes/Netflix-Clone.git`
 2. Navigate to the project directory:  
    `cd Netflix-Clone`
 3. Install the dependencies:  
