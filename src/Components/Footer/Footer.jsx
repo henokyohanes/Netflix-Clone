@@ -53,7 +53,7 @@ const Footer = () => {
           <p className="copyright">© 1997-2024 Netflix, Inc.</p>
         </div>
       </div>
-      <h6>This site is a clone made for educational purposes and is not affiliated with Apple Inc.</h6>
+      <h6>This site is a clone made for educational purposes and is not affiliated with Netflix Inc.</h6>
     </div>
   );
 }
